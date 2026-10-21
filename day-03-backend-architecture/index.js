@@ -1,3 +1,4 @@
+// Day 3: Practiced product name validation in Node.js.
 const http = require('http');
 const crypto = require('crypto');
 const productController = require('./controllers/productController');
