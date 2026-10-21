@@ -18,6 +18,15 @@ const app = http.createServer((req, res) => {
             try {
 
                 userData = JSON.parse(body);
+                if (typeof userData?.name !== "string" || !userData.name.trim()) {
+                    res.statusCode = 400;
+                    return res.end(
+                        JSON.stringify({
+                            "status": 400,
+                            "message": "Invalid name"
+                        })
+                    )
+                }
             }
             catch (error) {
                 res.statusCode = 400;
